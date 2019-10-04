@@ -53,3 +53,67 @@ function getTableFooter(){
             <div class="cell">${allExpense} Eur</div>
             <div class="cell">${allIncome-allExpense} Eur</div>`;
 }
+
+function getMinIncome() {
+
+    let month = 
+    account.reduce(function(current, next) {
+        if(current.income == undefined){
+            return next;
+        }
+        if(current.income > next.income) {
+            return next;
+        }
+        return current;
+    }).month - 1;
+
+    return months[month];
+}
+
+function getMaxIncome() {
+
+    let month = 
+    account.reduce(function(current, next) {
+        if(current.income == undefined){
+            return next;
+        }
+        if(current.income < next.income) {
+            return next;
+        }
+        return current;
+    }).month - 1;
+
+    return months[month];
+}
+
+function getMinExpense() {
+
+    let month = 
+    account.reduce(function(current, next) {
+        if(current.expense == undefined){
+            return next;
+        }
+        if(current.expense > next.expense) {
+            return next;
+        }
+        return current;
+    }).month - 1;
+
+    return months[month];
+}
+
+function getMaxExpense() {
+
+    let month = 
+    account.reduce(function(current, next) {
+        if(current.expense == undefined){
+            return next;
+        }
+        if(current.expense < next.expense) {
+            return next;
+        }
+        return current;
+    }).month - 1;
+
+    return months[month];
+}
