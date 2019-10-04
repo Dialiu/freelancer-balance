@@ -1,0 +1,1 @@
+document.querySelector('.table-content').innerHTML = tableContent();
